@@ -1,0 +1,17 @@
+:root {
+  --el-menu-hover-text-color: var(--el-menu-text-color);
+  --el-menu-hover-bg-color: white;
+  /* 侧边栏宽度 */
+  --el-aside-width: 300px;
+
+  --itcox-footer-margin: 0px;
+}
+
+html.dark {
+  /* 自定义深色背景颜色 */
+  --el-bg-color: #626aef;
+}
+
+svg {
+  display: inline-block;
+}

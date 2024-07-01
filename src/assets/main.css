@@ -4,17 +4,33 @@
 @tailwind utilities;
 
 body {
+  /* 今日头条字体 */
+  /* font-family:
+    PingFang SC,
+    Hiragino Sans GB,
+    Microsoft YaHei,
+    WenQuanYi Micro Hei,
+    Helvetica Neue,
+    Arial,
+    sans-serif; */
+
+  /* 稿订网站字体 */
   font-family:
     -apple-system,
     BlinkMacSystemFont,
-    Ping Fang SC,
     Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
+    PingFang SC,
+    Hiragino Sans GB,
+    Microsoft YaHei,
     Helvetica Neue,
-    sans-serif;
+    Helvetica,
+    Arial,
+    sans-serif,
+    Apple Color Emoji,
+    Segoe UI Emoji,
+    Segoe UI Symbol;
+
+  background-color: #f3f4f6;
+  line-height: 1.667;
+  color: #222;
 }
