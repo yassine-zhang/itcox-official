@@ -1,10 +1,15 @@
 :root {
   --el-menu-hover-text-color: var(--el-menu-text-color);
-  --el-menu-hover-bg-color: white;
+  --el-menu-hover-bg-color: transparent;
+  --el-menu-bg-color: transparent;
+  --el-menu-active-color: #303133;
+  --el-menu-base-level-padding: 8px;
   /* 侧边栏宽度 */
-  --el-aside-width: 300px;
+  --el-aside-width: 320px;
 
   --itcox-footer-margin: 0px;
+
+  --el-fill-color-blank: #ffffff66;
 }
 
 html.dark {

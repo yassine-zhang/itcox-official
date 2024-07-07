@@ -30,7 +30,16 @@ body {
     Segoe UI Emoji,
     Segoe UI Symbol;
 
-  background-color: #f3f4f6;
+  /* background-color: #f7f8fa; */
+  background-color: #3a3a3a;
   line-height: 1.667;
   color: #222;
+}
+
+.el-menu--horizontal > .el-sub-menu .el-sub-menu__title:hover {
+  background-color: inherit !important;
+}
+
+.el-menu--horizontal > .el-sub-menu .el-sub-menu__title {
+  border-bottom: 0px !important;
 }
