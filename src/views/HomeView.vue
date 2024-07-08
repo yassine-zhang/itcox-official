@@ -69,7 +69,7 @@
       </el-alert> -->
 
       <el-container class="mt-6 flex-col-reverse items-start px-0 lg:px-16 xl:px-24 md:flex-row">
-        <el-main class="p-3.5 pl-0 pt-0 lg:pl-3.5">
+        <el-main class="p-3.5 pt-0 md:pl-3.5">
           <el-carousel class="carousel-shadow" :height="carouselHeight">
             <el-carousel-item v-for="d in store.carouselData" :key="d">
               <img class="object-cover w-full h-full" :src="d.url" :alt="d.title" />
@@ -203,7 +203,7 @@
           </div>
         </el-main>
 
-        <el-aside class="p-2 pr-0 pb-10 pt-0 min-w-full md:min-w-40 lg:pr-2">
+        <el-aside class="p-3.5 pb-10 pt-0 min-w-full md:min-w-40 md:pr-3.5">
           <div class="relative overflow-hidden shadow-md p-3 border border-gray-300">
             <div class="flex gap-1 items-center">
               <Icon icon="unjs:db0" width="22px" height="22px" />
