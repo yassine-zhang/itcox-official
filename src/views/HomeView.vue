@@ -2,7 +2,7 @@
   <div class="common-layout relative">
     <el-container class="bg-white">
       <el-header
-        class="bg-white flex justify-between items-center overflow-hidden lg:px-20 xl:px-28"
+        class="bg-white flex justify-between items-center overflow-hidden px-0 lg:px-20 xl:px-28"
       >
         <el-menu
           :default-active="activeHeaderMenuIndex"
@@ -68,8 +68,8 @@
         </template>
       </el-alert> -->
 
-      <el-container class="lg:px-16 xl:px-24 mt-6 flex items-start">
-        <el-main class="p-3.5 pt-0">
+      <el-container class="mt-6 flex-col-reverse items-start px-0 lg:px-16 xl:px-24 md:flex-row">
+        <el-main class="p-3.5 pl-0 pt-0 lg:pl-3.5">
           <el-carousel class="carousel-shadow" :height="carouselHeight">
             <el-carousel-item v-for="d in store.carouselData" :key="d">
               <img class="object-cover w-full h-full" :src="d.url" :alt="d.title" />
@@ -85,14 +85,16 @@
             class="mt-12 h-[2px] bg-[url('@/assets/images/other/taxi-decorative-lines.png')] bg-repeat-x"
           ></div>
 
-          <div ref="contentRef" class="font-bold mt-10 p-5">
-            <h3 class="title title2 font-bold text-2xl text-center mb-5 mt-3">客户成品案例</h3>
+          <div ref="contentRef" class="font-bold mt-10 p-2 md:p-5">
+            <h3 class="title title2 font-bold text-2xl text-center z-10 mb-4 md:mb-5 md:mt-3">
+              客户成品案例
+            </h3>
             <div class="relative">
               <ul class="flex flex-wrap gap-4">
                 <li
                   v-for="d in store.productList"
                   :key="d.url"
-                  class="group relative w-[440px] h-72 overflow-hidden border shadow-md border-gray-300"
+                  class="group relative w-full h-72 overflow-hidden border shadow-md border-gray-300 md:w-[440px]"
                 >
                   <n-image
                     :src="d.url"
@@ -101,7 +103,7 @@
                     class="w-full h-full cursor-zoom-in relative z-10"
                   />
                   <div
-                    class="absolute z-10 w-full -bottom-16 bg-black/80 transition-all delay-100 ease-in-out group-hover:bottom-0 group-hover:bg-black/60 px-2"
+                    class="absolute z-10 px-2 w-full bottom-0 bg-black/60 md:-bottom-16 md:bg-black/80 md:transition-all md:delay-100 md:ease-in-out md:group-hover:bottom-0 md:group-hover:bg-black/60"
                   >
                     <p class="text-sm font-bold text-white">
                       {{ d.title }}
@@ -109,7 +111,7 @@
                   </div>
 
                   <div
-                    class="absolute rotate-45 -right-[190px] -top-[5px] w-full h-8 bg-[#fb3c3c] z-20"
+                    class="absolute rotate-45 w-40 h-8 bg-[#fb3c3c] z-20 -right-[50px] -top-[5px]"
                   >
                     <Icon
                       @click="openProductExternalLink(d.externalLink || '')"
@@ -130,7 +132,11 @@
               />
             </div>
 
-            <h3 class="title title2 font-bold text-2xl text-center mb-5 mt-20">开发者叙述</h3>
+            <h3
+              class="title title2 font-bold text-2xl text-center z-10 mb-4 mt-16 md:mb-5 md:mt-20"
+            >
+              开发者叙述
+            </h3>
             <div class="relative">
               <p class="relative leading-6 indent-8 mb-1.5 font-bold z-20">
                 开发者（张永鑫）曾在中职阶段参加过省级和国家级《物联网技能大赛》，获得省赛一等奖和国赛二等奖。在学习物联网技能期间，他意识到各学校间学习资源分配不均，无法真正筛选出所有有实力的选手。为此，他编写了一整套面向全国中高职师生的系列竞赛笔记。笔记包含Python、Android、STM32、SQL、CC2530以及配置笔记等六部分。据不完全统计，全国累计有350余名师生学习了这些笔记，获奖选手约有110人。
@@ -138,7 +144,7 @@
               <p>
                 <n-image
                   src="/static/other/newlandiot.jpg"
-                  class="w-9/12 max-w-[800px] cursor-zoom-in"
+                  class="w-full lg:cursor-zoom-in lg:w-9/12 lg:max-w-[800px]"
                 />
               </p>
               <p class="font-bold mt-4 ml-4">
@@ -162,7 +168,11 @@
               />
             </div>
 
-            <h3 class="title title2 font-bold text-2xl text-center mb-5 mt-20">更多问题</h3>
+            <h3
+              class="title title2 font-bold text-2xl text-center z-10 mb-4 mt-16 md:mb-5 md:mt-20"
+            >
+              更多问题
+            </h3>
             <div class="relative min-h-56">
               <el-collapse
                 class="relative z-10"
@@ -193,7 +203,7 @@
           </div>
         </el-main>
 
-        <el-aside class="ml-4 p-2 pb-20 pt-0">
+        <el-aside class="p-2 pr-0 pb-10 pt-0 min-w-full md:min-w-40 lg:pr-2">
           <div class="relative overflow-hidden shadow-md p-3 border border-gray-300">
             <div class="flex gap-1 items-center">
               <Icon icon="unjs:db0" width="22px" height="22px" />
@@ -205,7 +215,7 @@
                 <span class="font-bold gradient-text gradient-text-purple"
                   >济宁市若森软件开发中心</span
                 >
-                致力于为更多有<span class="bg-yellow-200">Web网站开发需求的群体</span
+                致力于为更多有<span ref="asideHighlight" class="mx-2">Web网站开发需求的群体</span
                 >提供帮助，我们提供网站从零开发， 到网站上线运营，再到网站维护升级等一站式服务。
                 <Icon :inline="true" icon="unjs:destr" />
                 <Icon :inline="true" icon="unjs:destr" />
@@ -239,7 +249,7 @@
               class="absolute -right-4 bottom-4"
             />
           </div>
-          <div class="mt-4 p-3 border shadow-md border-gray-300">
+          <div class="mt-2 p-3 border shadow-md border-gray-300 md:mt-4">
             <div class="flex gap-1 items-center">
               <Icon icon="unjs:nypm" width="22px" height="22px" />
               <span class="font-bold text-lg">技术标签云</span>
@@ -247,7 +257,7 @@
             <el-divider class="my-2" border-style="double" />
             <n-image src="/static/other/tag-cloud.png" class="w-full cursor-zoom-in" />
           </div>
-          <div class="mt-4 p-3 border shadow-md border-gray-300">
+          <div class="mt-2 p-3 border shadow-md border-gray-300 md:mt-4">
             <div class="flex gap-1 items-center">
               <Icon icon="unjs:ipx" width="22px" height="22px" />
               <span class="font-bold text-lg">媒体官方账号</span>
@@ -260,7 +270,7 @@
 
       <!-- 底部footer区域，包含友情链接+联系信息 -->
       <el-footer
-        class="footer h-auto px-6 pb-10 pt-6 md:px-12 md:pb-20 md:pt-12 bg-[#313131] text-gray-200 text-sm flex flex-wrap gap-32 justify-between items-start"
+        class="footer h-auto px-6 pb-10 pt-6 lg:px-12 lg:pb-20 lg:pt-12 bg-[#313131] text-gray-200 text-sm flex flex-wrap gap-32 justify-between items-start"
       >
         <div class="max-w-[800px]" v-if="store.friendshipLink.length > 0">
           <p class="font-bold">友情链接</p>
@@ -287,13 +297,15 @@
             >
             from <a class="underline" href="https://icons8.com/illustrations">Ouch!</a> )
             <p class="mt-0.5">有开发网站需求，或者有合作意向，欢迎联系我们。</p>
-            <p class="mt-1.5">联系方式：165-9999-9215 | QQ: 57878778</p>
+            <p class="mt-1.5">
+              联系方式：<span id="contact-details">165-9999-9215 | QQ: 57878778</span>
+            </p>
           </div>
         </div>
       </el-footer>
 
       <!-- 右侧悬浮模块 -->
-      <div class="fixed top-1/2 right-8">
+      <div class="fixed top-1/2 right-4 z-50 lg:right-8">
         <el-popover placement="left" :width="165" trigger="hover">
           <img src="@/assets/images/concat/qrcode.jpg" alt="qrcode" class="w-full" />
           <template #reference>
@@ -332,6 +344,9 @@
           </div>
         </el-tooltip>
       </div>
+
+      <!-- 动画触发线 -->
+      <div id="animation-trigger" class="w-full h-1 bg-yellow-200 fixed bottom-0 opacity-0"></div>
     </el-container>
   </div>
 </template>
@@ -342,6 +357,7 @@ import { useHomeViewStore } from '@/stores/home-view'
 import { scrollToTop } from '@/utils/scrollToTop'
 import { openLink } from '@/utils/openLink'
 import { useMessage } from 'naive-ui'
+import { annotate } from 'rough-notation'
 
 const message = useMessage()
 
@@ -393,10 +409,30 @@ function footerModule() {
   // 通过屏幕高度减去body元素高度，获取剩余
   const bodyHeight = document.body.clientHeight
   const screenHeight = window.innerHeight
-  const remainingHeight = Math.max(screenHeight - bodyHeight + calcFooterHeight(), 48)
+  const remainingHeight = Math.max(screenHeight - bodyHeight + calcFooterHeight(), 96)
 
   // 设置变量的值为外边距
   root.style.setProperty('--itcox-footer-margin', remainingHeight + 'px')
+
+  // 用红线将联系方式圈起来
+  const e = document.querySelector('#contact-details') as HTMLElement
+  const annotation = annotate(e, { type: 'underline', color: 'red' })
+  const animationTrigger = document.querySelector('#animation-trigger') as HTMLElement
+
+  // 写一个函数对比animationTrigger的getBoundingReact().top和e的
+  const compareBoundingReactTop = (): boolean => {
+    const animationTriggerTop = animationTrigger.getBoundingClientRect().top
+    const eTop = e.getBoundingClientRect().top
+
+    return animationTriggerTop > eTop
+  }
+
+  window.addEventListener('scroll', () => {
+    if (compareBoundingReactTop() && !annotation.isShowing()) {
+      console.log('draw')
+      annotation.show()
+    }
+  })
 }
 
 // 生命周期内的一些事件
@@ -434,15 +470,31 @@ function lifeCycleEvents() {
   })
 
   // 监听窗口大小变化事件，调整carousel高度，最低carouselMinHeight
-  window.addEventListener('resize', () => {
+  const resizeHandler = () => {
     // 通过style获取contentRef.value的元素宽度
     const contentWidth = contentRef.value.offsetWidth
 
     carouselHeight.value = `${Math.max(contentWidth * carouselFactor, carouselMinHeight)}px`
+  }
+  resizeHandler()
+  window.addEventListener('resize', () => {
+    resizeHandler()
   })
 }
 
+const asideHighlight = ref()
 onMounted(() => {
+  const isInlineText = window.innerWidth < 540 ? true : false
+  const annotation = annotate(asideHighlight.value, {
+    type: 'highlight',
+    color: 'yellow',
+    multiline: isInlineText
+  })
+  const timer = setTimeout(() => {
+    annotation.show()
+    clearTimeout(timer)
+  }, 1000)
+
   footerModule()
   lifeCycleEvents()
 })
