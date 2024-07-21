@@ -255,7 +255,7 @@
               <span class="font-bold text-lg">技术标签云</span>
             </div>
             <el-divider class="my-2" border-style="double" />
-            <n-image src="/static/other/tag-cloud.png" class="w-full cursor-zoom-in" />
+            <n-image src="/static/other/tag-cloud.png" class="cursor-zoom-in" />
           </div>
           <div class="mt-2 p-3 border shadow-md border-gray-300 md:mt-4">
             <div class="flex gap-1 items-center">
@@ -419,7 +419,11 @@ function footerModule() {
   const annotation = annotate(e, { type: 'underline', color: 'red' })
   const animationTrigger = document.querySelector('#animation-trigger') as HTMLElement
 
-  // 写一个函数对比animationTrigger的getBoundingReact().top和e的
+  /**
+   * 比较两个元素的边界框顶部位置
+   *
+   * @returns 如果animationTrigger元素的边界框顶部位置大于e元素的边界框顶部位置，则返回true；否则返回false
+   */
   const compareBoundingReactTop = (): boolean => {
     const animationTriggerTop = animationTrigger.getBoundingClientRect().top
     const eTop = e.getBoundingClientRect().top
