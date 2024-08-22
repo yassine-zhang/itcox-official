@@ -143,7 +143,7 @@
               </p>
               <p>
                 <n-image
-                  src="/static/other/newlandiot.jpg"
+                  src="https://cdn.itcox.cn/%40/other/newlandiot.jpg"
                   class="w-full lg:cursor-zoom-in lg:w-9/12 lg:max-w-[800px]"
                 />
               </p>
@@ -229,7 +229,10 @@
             </div>
             <el-divider class="my-2" border-style="dotted" />
             <div class="text-sm">
-              <n-image src="/static/license/dzyyzz.jpg" class="w-full cursor-zoom-in" />
+              <n-image
+                src="https://cdn.itcox.cn/%40/license/dzyyzz.jpg"
+                class="w-full cursor-zoom-in"
+              />
               <div class="flex gap-1 items-center pl-3">
                 <Icon icon="unjs:ufo" />
                 <p>
@@ -255,7 +258,7 @@
               <span class="font-bold text-lg">技术标签云</span>
             </div>
             <el-divider class="my-2" border-style="double" />
-            <n-image src="/static/other/tag-cloud.png" class="cursor-zoom-in" />
+            <n-image src="https://cdn.itcox.cn/%40/other/tag-cloud.png" class="cursor-zoom-in" />
           </div>
           <div class="mt-2 p-3 border shadow-md border-gray-300 md:mt-4">
             <div class="flex gap-1 items-center">
